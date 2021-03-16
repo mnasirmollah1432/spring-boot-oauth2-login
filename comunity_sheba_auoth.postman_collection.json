@@ -1,0 +1,176 @@
+{
+	"variables": [],
+	"info": {
+		"name": "comunity_sheba_auoth",
+		"_postman_id": "6945f0d4-d418-1ebd-5911-2a82a5974d0c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "oauth_token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"showPassword": false
+					}
+				},
+				"url": "http://localhost:8080/oauth/token",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "riad",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "refresh_token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"showPassword": false
+					}
+				},
+				"url": "http://localhost:8080/oauth/token",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "bc472167-5368-420a-9c73-ceab6b9278fc",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user_list",
+			"request": {
+				"url": "http://localhost:8080/user/list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 265f612a-4768-4078-96a7-fd9ab76a4f4f",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user_create",
+			"request": {
+				"url": "http://localhost:8080/user/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 265f612a-4768-4078-96a7-fd9ab76a4f4f",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\r\n\"username\" : \"asad\",\r\n\"password\" : \"123\",\r\n\"userRoles\" : [\"ROLE_OPERATOR\"]\r\n\t\r\n\t\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user_delete",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/user/delete?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 265f612a-4768-4078-96a7-fd9ab76a4f4f",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "revoke-token",
+			"request": {
+				"url": "http://localhost:8080/user/oauth/revoke-token",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 5f7bb928-d75d-46dd-8841-51d168137459",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
